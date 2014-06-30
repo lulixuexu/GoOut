@@ -7,7 +7,7 @@
 //
 
 #import "GOAppDelegate.h"
-
+#import "GOLoginViewController.h"
 @implementation GOAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -18,7 +18,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    GOLoginViewController *loginViewCtl = [[GOLoginViewController alloc] init];
+    self.window.rootViewController = loginViewCtl;
     [self.window makeKeyAndVisible];
     return YES;
 }
