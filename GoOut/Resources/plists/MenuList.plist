@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>menu_icon</key>
+		<string>map_icon.png</string>
+		<key>menu_name</key>
+		<string>Kindom Map</string>
+		<key>menu_controller</key>
+		<string>GOBaseMapViewController</string>
+	</dict>
+	<dict>
+		<key>menu_icon</key>
+		<string>friends_icon.png</string>
+		<key>menu_name</key>
+		<string>Friends</string>
+		<key>menu_controller</key>
+		<string>GOFriendsViewController</string>
+	</dict>
+	<dict>
+		<key>menu_icon</key>
+		<string>settings_icon.png</string>
+		<key>menu_name</key>
+		<string>Settings</string>
+		<key>menu_controller</key>
+		<string>GOSettingsViewController</string>
+	</dict>
+	<dict>
+		<key>menu_icon</key>
+		<string>challenges_icon.png</string>
+		<key>menu_name</key>
+		<string>Challenges</string>
+		<key>menu_controller</key>
+		<string>GOChallengesViewController</string>
+	</dict>
+</array>
+</plist>

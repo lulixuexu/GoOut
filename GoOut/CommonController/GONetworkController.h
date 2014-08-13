@@ -7,12 +7,15 @@
 //
 #define MAX_CONCURRENCY 32
 // Test
-#define URL_BASE @"http://ge-api-test.application-test.com/?a="
-
+//#define URL_BASE @"http://ge-api-test.application-test.com/?a="
+#define URL_BASE @"http://192.168.16.3/?a="
 typedef NS_ENUM(NSInteger, INTERFACE_TYPE) {
     LOGIN = 0,
-    CHANGE_PASSWORD,
-    FORGET_PASSWORD,
+    REGISTER,
+    FORGOT_PASSWORD,
+    SET_PASSWORD,
+    UPDATELOCATION,
+    FETCH_CONVEX_HULL,
     GET_DATASHEETS,
     GET_LITERATURES,
     DOWNLOAD_FILE,
@@ -24,10 +27,23 @@ typedef NS_ENUM(NSInteger, IDENTIFIER) {
     LOGIN_FAILURE = 0,
     LOGIN_SUCCESS,
     LOGIN_TIME_OUT,
+    REGISTER_FAILURE,
+    REGISTER_SUCCESS,
+    REGISTER_TIME_OUT,
+    FORGOT_FAILURE,
+    FORGOT_SUCCESS,
+    FORGOT_TIME_OUT,
+    SETPWD_FAILURE,
+    SETPWD_SUCCESS,
+    SETPWD_TIME_OUT,
+    UPDATELOC_FAILURE,
+    UPDATELOC_SUCCESS,
+    UPDATELOC_TIME_OUT,
+    FETCH_CONVEX_HULL_FAILURE,
+    FETCH_CONVEX_HULL_SUCCESS,
+    FETCH_CONVEX_HULL_TIME_OUT,
     CHANGE_FAILURE,
     CHANGE_SUCCESS,
-    FORGET_FAILURE,
-    FORGET_SUCCESS,
     DATASHEETS_FAILURE,
     DATASHEETS_SUCCESS,
     LITERATURES_FAILURE,
@@ -56,4 +72,9 @@ typedef NS_ENUM(NSInteger, IDENTIFIER) {
 
 + (GONetworkController *)sharedController;
 - (void)doLogin:(NSString *)phoneNum password:(NSString *)password;
+- (void)doRegister:(NSString *)phoneNum authenticateCode:(NSString *)code;
+- (void)doforgotPWD:(NSString *)phoneNum authenticateCode:(NSString *)code;
+
+- (void)updateUserLocation:(double)latitude longitude:(double)longitude city:(NSString*)cityName;
+- (void)fetchUserTerritory;
 @end

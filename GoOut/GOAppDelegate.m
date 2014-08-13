@@ -8,6 +8,8 @@
 
 #import "GOAppDelegate.h"
 #import "GOLoginViewController.h"
+#import "UINavigationController+GOBaseNavigationController.h"
+#import <SMS_SDK/SMS_SDK.h>
 @implementation GOAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -18,8 +20,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    //Message authentication register
+    [SMS_SDK registerApp:APPKEY withSecret:APPSECRET];
+    
     GOLoginViewController *loginViewCtl = [[GOLoginViewController alloc] init];
-    self.window.rootViewController = loginViewCtl;
+    _naviCtrl = [[UINavigationController alloc]initWithRootViewController:loginViewCtl];
+    self.window.rootViewController = _naviCtrl;
     [self.window makeKeyAndVisible];
     return YES;
 }

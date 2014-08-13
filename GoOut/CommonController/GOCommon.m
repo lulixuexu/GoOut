@@ -49,4 +49,24 @@
     
     return output;
 }
+
+//
++ (void)drawLineOnView:(UIView *)superView
+             lineWidth:(CGFloat )width
+          strokeColor :(UIColor *)color
+            startPoint:(CGPoint )sPoint
+              endPoint:(CGPoint )ePoint {
+    CAShapeLayer *lineShape = nil;
+    CGMutablePathRef linePath = nil;
+    linePath = CGPathCreateMutable();
+    lineShape = [CAShapeLayer layer];
+    lineShape.lineWidth = width;
+    lineShape.lineCap = kCALineCapRound;
+    lineShape.strokeColor = color.CGColor;
+    CGPathMoveToPoint(linePath, NULL, sPoint.x , sPoint.y );
+    CGPathAddLineToPoint(linePath, NULL, ePoint.x , ePoint.y);
+    lineShape.path = linePath;
+    CGPathRelease(linePath);
+    [superView.layer addSublayer:lineShape];
+}
 @end

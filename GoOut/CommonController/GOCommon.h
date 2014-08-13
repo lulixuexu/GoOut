@@ -15,4 +15,10 @@
 + (void)showHUDWithText:(NSString *)msg;
 
 + (NSString *)md5WithString:(NSString *)inputStr;
+
++ (void)drawLineOnView:(UIView *)superView
+             lineWidth:(CGFloat )width
+          strokeColor :(UIColor *)color
+            startPoint:(CGPoint )sPoint
+              endPoint:(CGPoint )ePoint;
 @end
